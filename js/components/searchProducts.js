@@ -4,11 +4,13 @@ export function searchProducts(products) {
   const search = document.querySelector(".search");
 
   search.onkeyup = function (event) {
-    const value = event.target.value.trim().toLowerCase();
+    const searchValue = event.target.value;
 
     const filteredProducts = products.filter(function (product) {
-      if (product.title.toLowerCase().startsWith(value)) {
+      if (product.price <= 50) {
         return true;
+      } else {
+        return false;
       }
     });
     createHtml(filteredProducts);
