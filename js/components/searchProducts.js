@@ -15,6 +15,9 @@ export function searchProducts(products) {
       }
       if (searchValue === "") {
         return true;
+      }
+      if (!product.price) {
+        displayMessage("error", error, target);
       } else {
         return false;
       }
@@ -22,31 +25,3 @@ export function searchProducts(products) {
     createHtml(filteredProducts);
   };
 }
-
-// // if (searchValue <= 50) {
-// //   return; //filtered products;
-// // } else {
-// //   //if nothing in search box have all products
-// // }
-
-// export function searchProducts(data, targetElement) {
-//   const search = document.querySelector(".search");
-
-//   function filterProducts() {
-//     const field = event.target.value;
-//     console.log(event.target.value);
-
-//     if (field <= 50) {
-//       return true;
-//     }
-//     const searchValue = event.target.value;
-
-//     const filteredData = data.filter(function (item) {
-//       if (item[field] <= 50) {
-//         return true;
-//       }
-//     });
-//     createHtml(filteredData, targetElement);
-//   }
-//   search.addEventListener("keyup", filterProducts);
-// }
