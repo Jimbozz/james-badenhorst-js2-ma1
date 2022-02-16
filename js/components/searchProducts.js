@@ -1,6 +1,4 @@
 import { createHtml } from "./createHtml.js";
-// import displayMessage from "./displayMessage.js";
-// import { EMPTY_RESULTS } from "../constants/message.js";
 
 export function searchProducts(products) {
   const search = document.querySelector(".search");
