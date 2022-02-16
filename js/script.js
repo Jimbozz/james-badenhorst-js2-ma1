@@ -1,9 +1,9 @@
 import { url } from "./constants/api.js";
 import { createHtml } from "./components/createHtml.js";
 import { searchProducts } from "./components/searchProducts.js";
-// import displayMessage from "./displayMessage.js";
+import displayMessage from "./components/displayMessage.js";
 
-const resultContainer = document.querySelector(".result-container");
+// const container = document.querySelector(".result-container");
 
 async function callApi() {
   try {
@@ -15,7 +15,7 @@ async function callApi() {
     searchProducts(json);
   } catch (error) {
     console.log(error);
-    displayMessage("error", error, resultContainer);
+    displayMessage("error", error, ".result-container");
   }
 }
 
