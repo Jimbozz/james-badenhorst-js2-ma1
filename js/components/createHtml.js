@@ -1,19 +1,14 @@
-// export function createHtml(data, targetElement) {
-//   const element = document.querySelector(targetElement);
-
-//   element.innerHtml = "";
-
-//   for (let i = 0; i < 7; i++) {
-//     element.innerHTML += `<div class="result">
-//                                         <h4>${data[i].price}</h4>
-
-//                                     </div>`;
-//   }
-// }
+import displayMessage from "./displayMessage.js";
+import { EMPTY_RESULTS } from "../constants/message.js";
 
 export function createHtml(cardsToRender) {
   const resultContainer = document.querySelector(".result-container");
   resultContainer.innerHTML = "";
+
+  if (cardsToRender.length === 0) {
+    resultContainer.innerHTML = "Whoops";
+    displayMessage("error", error, resultContainer);
+  }
 
   cardsToRender.forEach(function (card) {
     resultContainer.innerHTML += `
