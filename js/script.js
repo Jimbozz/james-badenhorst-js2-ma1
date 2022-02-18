@@ -15,7 +15,11 @@ async function callApi() {
     searchProducts(json);
   } catch (error) {
     console.log(error);
-    displayMessage("error", error, ".result-container");
+    displayMessage(
+      "error",
+      "There was an error loading, please reload the page.",
+      ".result-container"
+    );
   }
 }
 

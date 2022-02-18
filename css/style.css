@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
 }
 
@@ -12,15 +12,19 @@ body {
   margin: 1rem auto;
 }
 
-.result-container {
+.result-container,
+.product-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   min-width: 200px;
-  margin: 1rem;
   padding: 2rem;
   border: 1px solid lightgrey;
   border-radius: 0.5rem;
@@ -29,7 +33,6 @@ body {
 }
 
 .search {
-  margin-left: 1rem;
   padding: 0.5rem;
   border: 1px solid lightgray;
 }
@@ -37,16 +40,53 @@ body {
 .message {
   border: 1px solid grey;
   color: grey;
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 1rem;
+  width: 100%;
 }
 
 .message.error {
   border-color: red;
   color: red;
+  background: rgba(255, 0, 0, 0.144);
 }
 
-.message.success {
-  border-color: green;
-  color: green;
+.loading {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading:after {
+  content: " ";
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 9px solid red;
+  border-color: red transparent red transparent;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.menu {
+  margin-bottom: 1rem;
+}
+.menu a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu a.active {
+  color: red;
 }
